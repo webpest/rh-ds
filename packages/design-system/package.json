@@ -1,27 +1,23 @@
 {
-  "name": "@acme/ui",
+  "name": "@pixel-fusion-labs/design-system",
   "version": "0.0.0",
   "sideEffects": false,
   "license": "MIT",
-  "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
-    }
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "lint": "eslint . --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
+    "@pixel-fusion-labs/eslint-config": "*",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
-    "@repo/typescript-config": "*",
+    "@pixel-fusion-labs/typescript-config": "*",
     "tsup": "^8.0.2",
     "typescript": "^5.3.3"
   },
